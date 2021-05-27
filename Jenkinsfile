@@ -3,20 +3,21 @@ pipeline {
     /* insert Declarative Pipeline here */
     stages {
         stage('run-test') {
-            /* when {
+            when {
                 anyOf {
                     branch 'master'
                     branch 'dev'
-                }
-            } */
+            	   }
+            }
             steps {
                 sh 'chmod +x ./gradlew'
                 sh './gradlew test'
                 jacoco(
-                    classPattern: 'app/build/classes',
-                    inclusionPattern: '**/*.class',
+                    changeBuildStatus: true,
+                    classPattern: 'build/classes',
                     exclusionPattern: '**/*Test*.class',
-                    execPattern: 'app/build/jacoco/**/*.exec'
+                    execPattern: 'build/jacoco/**.exec',
+                    inclusionPattern: '**/*.class'
                 )
             }
         }
