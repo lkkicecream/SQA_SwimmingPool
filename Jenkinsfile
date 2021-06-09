@@ -13,7 +13,6 @@ pipeline {
                 sh 'chmod +x ./gradlew'
                 sh './gradlew test'
                 jacoco(
-                    changeBuildStatus: true,
                     classPattern: 'build/classes',
                     exclusionPattern: '**/*Test*.class',
                     execPattern: 'build/jacoco/**.exec',
@@ -23,7 +22,7 @@ pipeline {
         }
         stage('sonarqube-analysis') {
             environment {
-                SONAR_TOKEN = credentials('{sonarqube-token}')
+                SONAR_TOKEN = credentials('sonarqube-token')
             }
             steps {
                 sh '''./gradlew sonarqube \
