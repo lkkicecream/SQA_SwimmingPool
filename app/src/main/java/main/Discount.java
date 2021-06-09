@@ -6,7 +6,7 @@ public class Discount {
 	private static int min;
 	private static double discount = 0;
 
-	private static Discount_(Identity identity, String dateTime) throws Throwable {
+	public Discount_(Identity identity, String dateTime) throws Throwable {
 
 		this.identity = identity;
 		this.hour = InputNormalization.extractHour(dateTime);
