@@ -9,8 +9,8 @@ public class Discount {
 	public Discount(Identity identity, String dateTime) throws Throwable {
 
 		//.identity = identity;
-		static hour = InputNormalization.extractHour(dateTime);
-		static min = InputNormalization.extractMin(dateTime);
+		hour = InputNormalization.extractHour(dateTime);
+		min = InputNormalization.extractMin(dateTime);
 
 		checkException();
 	}
