@@ -1,12 +1,12 @@
 package main;
 
 public class Discount {
-	public Identity identity;
-	public int hour;
-	public int min;
-	public double discount = 0;
+	private static Identity identity;
+	private static int hour;
+	private static int min;
+	private static double discount = 0;
 
-	public Discount(Identity identity, String dateTime) throws Throwable {
+	private static Discount_(Identity identity, String dateTime) throws Throwable {
 
 		this.identity = identity;
 		this.hour = InputNormalization.extractHour(dateTime);
