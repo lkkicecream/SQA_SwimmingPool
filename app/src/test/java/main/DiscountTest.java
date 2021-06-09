@@ -44,27 +44,4 @@ public class DiscountTest {
 			Assertions.assertEquals(1, discount.getDiscount());
 		}
 	}
-
-	@DisplayName("是否為會員的折扣")
-	@Nested
-	class DifferentAges2 {
-		String dateTime = "2021-05-26 週三 14:30:00";
-
-		@Test
-		public void testAgeHasDiscount() throws Throwable {
-			Identity identity = new Identity(10, true, false);
-			Discount discount = new Discount(identity, dateTime);
-			Assertions.assertEquals(0.5, discount.getDiscount());
-		}
-
-		@Test
-		public void testAgeLessThan() throws Throwable {
-			Identity identity = new Identity(10, false, true);
-			try {
-				new Discount(identity, dateTime);
-			} catch (Throwable exception) {
-				Assertions.assertEquals(0.7, discount.getDiscount());
-			}
-		}
-	}
 }
