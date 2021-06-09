@@ -4,13 +4,13 @@ public class Discount {
 	public static Identity identity;
 	public static int hour;
 	public static int min;
-	public static double discount = 0;
+	public static double dis = 0;
 
 	public Discount(Identity identity, String dateTime) throws Throwable {
 
-		this.identity = identity;
-		this.hour = InputNormalization.extractHour(dateTime);
-		this.min = InputNormalization.extractMin(dateTime);
+		//.identity = identity;
+		static hour = InputNormalization.extractHour(dateTime);
+		static min = InputNormalization.extractMin(dateTime);
 
 		checkException();
 	}
