@@ -47,7 +47,7 @@ public class DiscountTest {
 
 	@DisplayName("是否為會員的折扣")
 	@Nested
-	class DifferentAges {
+	class DifferentAges2 {
 		String dateTime = "2021-05-26 週三 14:30:00";
 
 		@Test
